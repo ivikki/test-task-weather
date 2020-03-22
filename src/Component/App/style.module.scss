@@ -1,0 +1,44 @@
+.wrapper {
+  background-color: lightgrey;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+
+  .card {
+    width: 19%;
+    margin: 0 auto;
+  }
+
+  .button {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 3px solid blue;
+    font-weight: bold;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+
+  .cards {
+    display: flex;
+  }
+
+  .spinner {
+    position: relative;
+    min-height: 200px;
+    margin: 20px auto;
+  }
+
+  .error {
+    background-color: bisque;
+    border: 3px solid red;
+    color: red;
+    border-radius: 5px;
+    padding: 10px;
+  }
+}
+
+
