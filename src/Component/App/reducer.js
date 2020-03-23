@@ -15,7 +15,7 @@ export default function (state = initial, action) {
         case TYPE.CLEAR:
             return { ...initial };
         case TYPE.META:
-            return { ...state, ...options};
+            return { ...state, ...options };
         default:
             return state;
     }
