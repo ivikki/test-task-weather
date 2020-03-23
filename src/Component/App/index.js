@@ -34,9 +34,7 @@ class App extends PureComponent {
           <div className={s.wrapper}>
               {errorMessage && <div className={s.error}>{errorMessage}</div>}
               <h3>Погода в Харькове сегодня:</h3>
-              <div className={s.card}>
-                  <Card weather={today} />
-              </div>
+              <Card weather={today} />
               {list.length ? (
                   <div className={s.spinner}>
                       <Loader expectAnswer={expectAnswer}>
@@ -44,12 +42,13 @@ class App extends PureComponent {
                               <h3>Погода в Харькове на 5 дней:</h3>
                               <div className={s.cards}>
                                   {list.map(el => (
-                                      <div className={s.card} key={el.dt}>
-                                          <h4>
+                                      <Card
+                                          key={el.dt}
+                                          weather={el}
+                                          title={<h4>
                                               {moment(_.get(el, 'dt_txt')).format('DD-MM-YYYY')}
-                                          </h4>
-                                          <Card weather={el} />
-                                      </div>
+                                          </h4>}
+                                      />
                                   ))}
                               </div>
                           </div>

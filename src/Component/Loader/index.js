@@ -11,12 +11,12 @@ export default function Loader ({ children, expectAnswer }) {
         return <img className={s.loader} src={img} alt="loader" />;
     }
 
-    return children ? children : '';
+    return children;
 }
 Loader.propTypes = {
     children: PropTypes.node,
     expectAnswer: PropTypes.bool.isRequired
 };
-Loader.default = {
+Loader.defaultProps = {
     children: ''
 };
