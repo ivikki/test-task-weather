@@ -4,7 +4,7 @@ import { TYPE } from './types';
 const initial = {
     expectAnswer: false,
     initialized: false,
-    errorMessage: null,
+    errorMessage: '',
     today: {},
     list: []
 };

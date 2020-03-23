@@ -15,7 +15,7 @@ export default function Loader ({ children, expectAnswer }) {
 }
 Loader.propTypes = {
     children: PropTypes.node,
-    expectAnswer: PropTypes.bool.isRequired
+    expectAnswer: PropTypes.bool
 };
 Loader.defaultProps = {
     children: ''

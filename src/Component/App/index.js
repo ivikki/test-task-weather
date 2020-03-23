@@ -27,7 +27,7 @@ class App extends PureComponent {
       } = this.props;
 
       if (!initialized) {
-          return <Loader />;
+          return <Loader expectAnswer/>;
       }
 
       return (
@@ -63,6 +63,16 @@ class App extends PureComponent {
       );
   }
 }
+App.propTypes = {
+    initialized: PropTypes.bool.isRequired,
+    errorMessage: PropTypes.string.isRequired,
+    today: PropTypes.object.isRequired,
+    list: PropTypes.array.isRequired,
+    update: PropTypes.func.isRequired,
+    expectAnswer: PropTypes.bool.isRequired,
+    init: PropTypes.func.isRequired,
+    clear: PropTypes.func.isRequired
+};
 
 export default connect(
     // mapStateToProps
@@ -70,7 +80,8 @@ export default connect(
         initialized: state.appReducer.initialized,
         errorMessage: state.appReducer.errorMessage,
         list: state.appReducer.list,
-        today: state.appReducer.today
+        today: state.appReducer.today,
+        expectAnswer: state.appReducer.expectAnswer,
     }),
     // mapDispatchToProps
     dispatch => ({
@@ -80,13 +91,3 @@ export default connect(
     })
 )(App);
 
-App.propTypes = {
-    initialized: PropTypes.bool.isRequired,
-    errorMessage: PropTypes.bool.isRequired,
-    today: PropTypes.array.isRequired,
-    list: PropTypes.object.isRequired,
-    update: PropTypes.bool.isRequired,
-    expectAnswer: PropTypes.bool.isRequired,
-    init: PropTypes.func.isRequired,
-    clear: PropTypes.func.isRequired
-};
